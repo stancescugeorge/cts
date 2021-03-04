@@ -1,5 +1,7 @@
 package sem2;
 
+import java.text.DateFormatSymbols;
+
 public class CalendarUtil {
 	public String weekDay(int day) {
 		if (day == 1)
@@ -17,7 +19,8 @@ public class CalendarUtil {
 		else if (day == 7)
 			return "Saturday";
 
-		return null;
+		//return null;
+		throw new IllegalArgumentException("Only 7 days in a week");
 
 	}
 
@@ -42,12 +45,20 @@ public class CalendarUtil {
 		}
 	}
  
-	public String weekDay3(int day) {
+	public String weekDay3(int day) throws IncorectDayException {
 		String[] weekDays = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
-		if (day >= 0 && day <= 6)
-			return weekDays[day - 1];
+		if (day <1|| day> 7)
+			throw new IncorectDayException("Only 7 days in a week!");
 
-		return null;
+		return weekDays[day-1];
+	}
+	
+	public String weekDay4(int day) throws IncorectDayException  {
+		if (day <1|| day> 7)
+			throw new IncorectDayException("Only 7 days in a week!");
+		String[] days=new DateFormatSymbols().getWeekdays();
+		
+		return days[day-1];
 	}
 
 }
