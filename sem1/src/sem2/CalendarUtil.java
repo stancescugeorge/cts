@@ -58,7 +58,7 @@ public class CalendarUtil {
 			throw new IncorectDayException("Only 7 days in a week!");
 		String[] days=new DateFormatSymbols().getWeekdays();
 		
-		return days[day-1];
+		return days[day];
 	}
 
 }
