@@ -24,7 +24,7 @@ public class CalendarUtil {
 
 	}
 
-	public String weekDay2(int day) {
+	public String weekDay2(int day) throws IncorectDayException {
 		switch (day) {
 		case 1:
 			return "Sunday";
@@ -41,7 +41,7 @@ public class CalendarUtil {
 		case 7:
 			return "Saturday";
 		default:
-			return null;
+			throw new IncorectDayException("Only 7 days in a week");
 		}
 	}
  

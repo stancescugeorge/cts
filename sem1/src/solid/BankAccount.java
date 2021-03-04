@@ -4,7 +4,7 @@ public class BankAccount {
 	private String iban;
 	private long balance;
 	
-	private Person accountHolder; //single-responsability
+	private Person accountHolder; //single-responsibility
 
 	public BankAccount(String iban, Person person) {
 		this.iban = iban;
@@ -12,11 +12,15 @@ public class BankAccount {
 		this.accountHolder=person;
 	}
 	
-	public void withdraw(long amount) {
+	public void withdraw(long amount) throws InsuficientFundsException {
+		if (amount > balance)
+			throw new InsuficientFundsException("Insuficient funds " + balance);
+		System.out.println("withdrawing " + amount + " from "+this.iban);
 		balance-=amount;
 	}
 	
 	public void deposit(long amount) {
+		System.out.println("adding "+String.valueOf(amount)+" to "+this.iban);
 		balance+=amount;
 	}
 
