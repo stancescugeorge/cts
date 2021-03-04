@@ -1,9 +1,9 @@
 package sem2;
 
-import solid.BankAccount;
-import solid.FeeBankAccount;
-import solid.InsuficientFundsException;
-import solid.Person;
+import sem2.solid.BankAccount;
+import sem2.solid.FeeBankAccount;
+import sem2.solid.InsuficientFundsException;
+import sem2.solid.Person;
 
 public class Main {
 	public static void main(String[] args) {

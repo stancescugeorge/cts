@@ -1,4 +1,4 @@
-package solid;
+package sem2.solid;
 
 public class BankAccount {
 	private String iban;
