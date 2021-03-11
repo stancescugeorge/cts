@@ -8,14 +8,23 @@ public class Main {
 			
 		Map<Person, Receivable> employees = new HashMap<>();
 		
+		NotificationService smsService = new SMSNotificationService();
+		NotificationService emailService = new EmailNotificationService();
+		
 		Person p1=new Person("Chuck Norris");
-		CreditBankAccount b1=new CreditBankAccount("RFZ123123123", p1, -500);
+		p1.setEmail("chuck@norris.com");
+		p1.setMobile("+4234230423");
+		CreditBankAccount b1=new CreditBankAccount(smsService,"RFZ123123123", p1, -500);
 		
 		Person p2=new Person("Arnold");
-		DebitBankAccount b2=new FeeBankAccount("INGB12312432", p2);
+		p2.setEmail("arnold@arnold.com");
+		p2.setMobile("+4234230424");
+		DebitBankAccount b2=new FeeBankAccount(emailService, "INGB12312432", p2);
 		
 		Person p3=new Person("Van Damme");
-		DebitBankAccount b3=new DebitBankAccount("BT1231231231", p3);
+		p3.setEmail("van@damme.com");
+		p3.setMobile("+4234230425");
+		DebitBankAccount b3=new DebitBankAccount(smsService, "BT1231231231", p3);
 		
 		employees.put(p1, b1);
 		employees.put(p2, b2);
@@ -39,7 +48,7 @@ public class Main {
 			
 		}
 		
-		System.out.println("\n\n");
+		System.out.println("\n");
 		
 		try {
 			b2.transfer(b3, 200);

@@ -6,7 +6,8 @@ public class DebitBankAccount extends BankAccount implements Payable,Receivable,
 	
 	private Person accountHolder; //single-responsibility
 
-	public DebitBankAccount(String iban, Person person) {
+	public DebitBankAccount(NotificationService ns, String iban, Person person) {
+		super(ns);
 		this.iban = iban;
 		this.balance = 0;
 		this.accountHolder=person;
@@ -16,13 +17,13 @@ public class DebitBankAccount extends BankAccount implements Payable,Receivable,
 	public void withdraw(long amount) throws InsuficientFundsException {
 		if (amount > balance)
 			throw new InsuficientFundsException("Insuficient funds " + balance);
-		System.out.println("withdrawing " + amount + " from "+this.iban);
+		notificationService.sendNotification(accountHolder, "withdrawing " + amount + " from "+this.iban);
 		balance-=amount;
 	}
 	
 	@Override
 	public void deposit(long amount) {
-		System.out.println("adding "+String.valueOf(amount)+" to "+this.iban);
+		notificationService.sendNotification(accountHolder, "Adding " + amount + " to " + iban);
 		balance+=amount;
 	}
 

@@ -11,6 +11,33 @@ public class Person {
 	
 	private long salary;
 	
+	private String email;
+	
+	private String mobile;
+	
+	private NotificationType notificationType;
+	
+	public static enum NotificationType{
+		EMIAL,
+		SMS
+	}
+	
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public Person(String name) {
 		this.name=name;
 	}
