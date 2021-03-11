@@ -1,6 +1,6 @@
 package seminar3;
 
-public class DebitBankAccount implements Payable,Receivable {
+public class DebitBankAccount extends BankAccount implements Payable,Receivable {
 	private String iban;
 	private long balance;
 	
