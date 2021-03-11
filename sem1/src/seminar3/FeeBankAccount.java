@@ -1,6 +1,6 @@
 package seminar3;
 
-public class FeeBankAccount extends BankAccount {
+public class FeeBankAccount extends DebitBankAccount {
 	private long fee = 2;
 
 	public FeeBankAccount(String iban, Person person) {
