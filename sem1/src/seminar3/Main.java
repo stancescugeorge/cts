@@ -39,5 +39,13 @@ public class Main {
 			
 		}
 		
+		System.out.println("\n\n");
+		
+		try {
+			b2.transfer(b3, 200);
+		} catch (InsuficientFundsException e) {
+			System.out.println(e.getMessage());
+		}
+		
 	}
 }

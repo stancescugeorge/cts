@@ -1,6 +1,6 @@
 package seminar3;
 
-public class DebitBankAccount extends BankAccount implements Payable,Receivable {
+public class DebitBankAccount extends BankAccount implements Payable,Receivable,Transferable {
 	private String iban;
 	private long balance;
 	
@@ -36,6 +36,12 @@ public class DebitBankAccount extends BankAccount implements Payable,Receivable 
 
 	public Person getAccountHolder() {
 		return accountHolder;
+	}
+
+	@Override
+	public void transfer(Receivable destination, long amount) throws InsuficientFundsException {
+		this.withdraw(amount);
+		destination.deposit(amount);
 	}
 	
 }
