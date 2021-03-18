@@ -26,10 +26,11 @@ public class CreditBankAccount extends BankAccount implements Receivable{
     	return new CreditBankAccount(ns, iban, accountHolder, 0);
     }
 
-	@Override
-	public String toString() {
-		return "CreditBankAccount [iban=" + iban + ", balance=" + balance + "]";
-	}
+    //mosteneste toString din BankAccount
+//	@Override
+//	public String toString() {
+//		return "CreditBankAccount [iban=" + iban + ", balance=" + balance + "]";
+//	}
     
     
 }

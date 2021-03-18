@@ -34,4 +34,11 @@ public abstract class BankAccount {
 	    public void setAccountHolder(Person accountHolder) {
 	        this.accountHolder = accountHolder;
 	    }
+
+		@Override
+		public String toString() {
+			return "BankAccount [iban=" + iban + ", balance=" + balance + "]";
+		}
+	    
+	    
 }

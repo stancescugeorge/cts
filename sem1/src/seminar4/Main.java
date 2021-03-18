@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.util.Random;
 
 import seminar4.banking.*;
+import seminar4.banking.Person.NotificationType;
 import seminar4.singleton.Elvis;
 import seminar4.singleton.ElvisV2;
 
@@ -41,6 +42,39 @@ public class Main {
 		
 		ElvisV2 elvisV2=ElvisV2.INSTANCE; //cu enum
 		elvisV2.sing();
+		
+		//FACTORY
+		
+		Person adult=new Person("Van Damme");
+		adult.setEmail("van@damme.com");
+		adult.setMobile("+4234230425");
+		adult.setAge(30);
+		adult.setNotificationType(NotificationType.EMAIL);
+		
+		Person child=new Person("Van Damme Junior");
+		child.setEmail("vanJR@damme.com");
+		child.setMobile("+4234230888");
+		child.setAge(14);
+		child.setNotificationType(Person.NotificationType.SMS);
+		
+		Bank bank=Bank.getInstance();
+		
+		DebitBankAccount debit1=bank.openDebitAccount(adult);
+		
+		DebitBankAccount debit2=bank.openDebitAccount(child);
+		
+		debit1.deposit(20);
+		debit2.deposit(5);
+		
+		try {
+			debit1.withdraw(15);
+			debit2.withdraw(3);
+		} catch (InsuficientFundsException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		System.out.println(debit1);
+		System.out.println(debit2);
 	}
 
 }

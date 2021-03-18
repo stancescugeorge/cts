@@ -1,8 +1,6 @@
 package seminar4.banking;
 
 public class DebitBankAccount extends BankAccount implements Payable,Receivable,Transferable {
-	private String iban;
-	private long balance;
 	
 	private Person accountHolder; //single-responsibility
 
@@ -44,5 +42,5 @@ public class DebitBankAccount extends BankAccount implements Payable,Receivable,
 		this.withdraw(amount);
 		destination.deposit(amount);
 	}
-	
+
 }

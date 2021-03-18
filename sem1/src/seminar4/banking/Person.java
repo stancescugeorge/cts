@@ -9,6 +9,8 @@ public class Person {
 	
 	private Date birthDate;
 	
+	private Integer age;
+
 	private long salary;
 	
 	private String email;
@@ -18,10 +20,31 @@ public class Person {
 	private NotificationType notificationType;
 	
 	public static enum NotificationType{
-		EMIAL,
+		EMAIL {
+			@Override
+			public NotificationService getNotificationService() {
+				return new EmailNotificationService(); //trebuie modificata logica pentru nu genera mereu noi instante
+			}
+		},
 		SMS
+		{
+			@Override
+			public NotificationService getNotificationService() {
+				return new SMSNotificationService();
+			}
+		};
+
+		public abstract NotificationService getNotificationService();
 	}
 	
+	public NotificationType getNotificationType() {
+		return notificationType;
+	}
+
+	public void setNotificationType(NotificationType notificationType) {
+		this.notificationType = notificationType;
+	}
+
 	public String getMobile() {
 		return mobile;
 	}
@@ -74,5 +97,12 @@ public class Person {
 		this.salary = salary;
 	}
 	
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
 	
 }
