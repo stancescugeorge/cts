@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.util.Random;
 
 import seminar4.banking.*;
+import seminar4.singleton.Elvis;
 
 public class Main {
 
@@ -28,6 +29,10 @@ public class Main {
 		b.deposit(50);
 		
 		System.out.println(b.toString());
+		
+		//SINGLETON
+		Elvis elvis=Elvis.theTrueElvis;
+		elvis.sing();
 	}
 
 }
