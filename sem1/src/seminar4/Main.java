@@ -5,6 +5,7 @@ import java.util.Random;
 
 import seminar4.banking.*;
 import seminar4.singleton.Elvis;
+import seminar4.singleton.ElvisV2;
 
 public class Main {
 
@@ -31,8 +32,15 @@ public class Main {
 		System.out.println(b.toString());
 		
 		//SINGLETON
-		Elvis elvis=Elvis.theTrueElvis;
+		//Elvis elvis=Elvis.theTrueElvis;
+		Elvis elvis=Elvis.getInstance();
 		elvis.sing();
+		
+		Elvis elvis2=Elvis.getInstance();
+		System.out.println(elvis==elvis2); //verificare pt modificare getInstance cu return new Elvis()
+		
+		ElvisV2 elvisV2=ElvisV2.INSTANCE; //cu enum
+		elvisV2.sing();
 	}
 
 }
