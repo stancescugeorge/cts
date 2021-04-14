@@ -21,6 +21,16 @@ public class TestAdapter {
 		// deci logic trebuie sa adaptam caracterele Disney (Donald) la ACME 
 		ArrayList<ACMECaracterJoc> caractere = new ArrayList<>();
 		caractere.add(dragon);
+		
+		AdaptorDisneyLaACME adaptorDonald = new AdaptorDisneyLaACME(donald);
+		caractere.add(adaptorDonald);
+		
+		System.out.println("-----------------------------");
+		
+		for(ACMECaracterJoc caracter: caractere) {
+			caracter.seDeplaseaza();
+			caracter.esteLovit(50);
+		}
 	}
 
 }

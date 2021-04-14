@@ -16,6 +16,12 @@ public class DonaldDuck implements ActiuniDisney {
 	public static String getDenumire() {
 		return denumire;
 	}
+	
+	@Override
+	public String getNume() {
+		return denumire;
+	}
+
 
 	@Override
 	public void move(int x, int y) {
@@ -39,4 +45,5 @@ public class DonaldDuck implements ActiuniDisney {
 		System.out.println("Jump");
 	}
 
+	
 }
