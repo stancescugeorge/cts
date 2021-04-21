@@ -20,7 +20,7 @@ public class ProfilPlayer {
 	}
 
 	// metoda care se modifica in fct de perioada anului etc. 
-	// o vom implementaextern
+	// o vom implementa extern
 	public void getBonus() {
 		if (this.strategieBonus != null) {
 			int puncteBonus = this.strategieBonus.getPuncteBonus(this);

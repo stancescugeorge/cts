@@ -14,7 +14,7 @@ Sa se gaseasca o solutie care sa permita:
 - modificarea strategiei de acordare a bonusului la runtime fara a modifica implementarea jocului
 
 
-STATE MACHINE
+STATE MACHINE (la fel ca strategy, DOAR ca obiectul isi schimba singur starea)
 3. Comportamentul caracterul este influentat de stare lui
 - daca acesta este ranit miscarile sunt afectate
 - daca este afectat de actiunile magice ale celorlalte carcatere, actiunile acestuia (modul in care ataca, se apara) sunt afectate
