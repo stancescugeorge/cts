@@ -28,6 +28,10 @@ public abstract class DecoratorCaracter extends ACMECaracterJoc { //abstract - p
 		caracter.seVindeca(puncte);
 	}
 	
-	
+	//cauza bug
+	@Override
+	public int getPuncteViata() {
+		return this.caracter.getPuncteViata();
+	}
 
 }
