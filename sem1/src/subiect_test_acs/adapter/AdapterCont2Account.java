@@ -17,7 +17,7 @@ public class AdapterCont2Account implements BankAccount{
 	}
 	
 	//am nevoie sa convertesc bankaccount intr un cont
-	//nu e tocmai clean, dat pt exemplu merge
+	//nu e tocmai clean, dar pt exemplu merge
 	private ContBancarDebit conversie(BankAccount account) {
 		DebitAccount debitAccount=(DebitAccount)account;
 		ContBancarDebit cont=new ContBancarDebit(debitAccount.value, debitAccount.id+" ");

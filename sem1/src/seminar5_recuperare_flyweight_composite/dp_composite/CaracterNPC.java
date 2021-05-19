@@ -1,6 +1,6 @@
 package seminar5_recuperare_flyweight_composite.dp_composite;
 
-public class CaracterNPC extends NodAbstractStructura {
+public class CaracterNPC extends NodAbstractStructura { //nod frunza, tratam metodele specifice nodului cu exceptii
 
 	String nume;
 	int putere;

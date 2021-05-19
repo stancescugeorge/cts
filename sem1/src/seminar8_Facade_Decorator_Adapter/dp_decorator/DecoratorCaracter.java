@@ -13,19 +13,19 @@ public abstract class DecoratorCaracter extends ACMECaracterJoc { //abstract - p
 
 	@Override
 	public void seDeplaseaza() {
-		caracter.seDeplaseaza();
+		this.caracter.seDeplaseaza();
 		
 	}
 
 	@Override
 	public void esteLovit(int puncte) {
-		caracter.esteLovit(puncte);
+		this.caracter.esteLovit(puncte);
 		
 	}
 
 	@Override
 	public void seVindeca(int puncte) {
-		caracter.seVindeca(puncte);
+		this.caracter.seVindeca(puncte);
 	}
 	
 	//cauza bug

@@ -16,6 +16,7 @@ public class CaracterFantastic extends ACMECaracterJoc {
 		this.puncteViata-=puncte;
 		System.out.println(String.format("%s este lovit si pierde %d puncte"
 				,nume,puncte));
+		System.out.println("Puncte viata ramase: "+this.puncteViata);
 	}
 
 	@Override

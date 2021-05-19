@@ -2,7 +2,7 @@ package seminar5_recuperare_flyweight_composite.dp_flyweight;
 
 import java.util.HashMap;
 
-public class FactoryModel3D {
+public class FactoryModel3D { //flyweight factory
 	
 	static HashMap<String, InterfataModel3D> modele = new HashMap<>();
 	

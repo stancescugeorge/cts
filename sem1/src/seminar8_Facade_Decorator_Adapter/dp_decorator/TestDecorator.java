@@ -21,7 +21,7 @@ public class TestDecorator {
 		dragon=new DecoratorRanit(dragon);
 		dragon.esteLovit(400);
 		dragon.seDeplaseaza();
-		dragon.esteLovit(500);
+		dragon.esteLovit(750);
 		dragon.seDeplaseaza(); //? e o problema cu decoratorRanit
 	}
 

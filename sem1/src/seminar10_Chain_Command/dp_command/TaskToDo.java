@@ -1,6 +1,6 @@
 package seminar10_Chain_Command.dp_command;
 
-public class TaskToDo extends TaskAsincron {
+public class TaskToDo extends TaskAsincron { //comanda concreta
 	
 	//referinta catre modulJoc
 	InterfataModulJoc modulJoc = null;
